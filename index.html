@@ -49,13 +49,13 @@
       padding: 2rem 1.5rem;
       position: fixed;
       left: 50%;
-      top: 20%;
-      transform: translate(-50%, -20%);
+      top: 50%;
+      transform: translate(-50%, -50%);
       border: 2px solid var(--rosa-claro);
       transition: opacity 0.4s;
     }
     #popup-agenda.show { display: block; animation: popin 0.9s cubic-bezier(.4,2,.6,1.5);}
-    @keyframes popin { from {opacity:0; transform:scale(0.8) translate(-50%,-20%);} to {opacity:1; transform:scale(1) translate(-50%,-20%);} }
+    @keyframes popin { from {opacity:0; transform:scale(0.8) translate(-50%,-50%);} to {opacity:1; transform:scale(1) translate(-50%,-50%);} }
     #whatsapp-float {
       position: fixed;
       bottom: 2.2rem;
@@ -119,7 +119,11 @@
     .navlink:hover:after { width: 100%; }
     .navlink:hover { color: var(--roxo-terroso);}
     @media (max-width: 640px) {
-      #popup-agenda { max-width: 95vw; top: 10%; }
+      #popup-agenda { 
+        max-width: 95vw;
+        width: 95vw;
+        margin: 0 auto;
+      }
       #whatsapp-float {width:56px; height:56px; font-size:1.5rem;}
     }
   </style>

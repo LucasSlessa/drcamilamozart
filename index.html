@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Dra. Camila Mozart | Saúde Mental da Mulher em São José dos Campos</title>
+  <meta name="description" content="Dra. Camila Mozart - Médica em Saúde Mental da Mulher. Acolhimento, equilíbrio e cuidado em todas as fases da vida feminina em São José dos Campos.">
+  <meta name="keywords" content="Saúde mental da mulher, psiquiatria feminina, consulta online, Dra Camila Mozart, São José dos Campos, gestação, puerpério, depressão, ansiedade">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/685/685655.png">
+  <style>
+    :root {
+      --verde-acinzentado: #f8f8f8;
+      --cinza-escuro: #666666;
+      --rosa-claro: #DBC8C2;
+      --roxo-terroso: #7C5866;
+    }
+    .font-valention { font-family: 'Great Vibes', cursive; }
+    .font-herkings { font-family: 'Playfair Display', serif; }
+    .font-trajan { font-family: 'EB Garamond', serif; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image: url('https://www.transparenttextures.com/patterns/symphony.png');
+    }
+    body {
+      background: var(--verde-acinzentado);
+      position: relative;
+      min-height: 100vh;
+      font-family: 'EB Garamond', serif;
+      color: var(--cinza-escuro);
+      scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar { width: 10px; background: var(--verde-acinzentado);}
+    ::-webkit-scrollbar-thumb { background: var(--cinza-escuro); border-radius: 7px;}
+    #popup-agenda {
+      display: none;
+      z-index: 50;
+      background: rgba(188, 196, 188, 0.97);
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 32px 0 rgba(124,88,102,0.20);
+      max-width: 370px;
+      padding: 2rem 1.5rem;
+      position: fixed;
+      left: 50%;
+      top: 20%;
+      transform: translate(-50%, -20%);
+      border: 2px solid var(--rosa-claro);
+      transition: opacity 0.4s;
+    }
+    #popup-agenda.show { display: block; animation: popin 0.9s cubic-bezier(.4,2,.6,1.5);}
+    @keyframes popin { from {opacity:0; transform:scale(0.8) translate(-50%,-20%);} to {opacity:1; transform:scale(1) translate(-50%,-20%);} }
+    #whatsapp-float {
+      position: fixed;
+      bottom: 2.2rem;
+      right: 1.5rem;
+      z-index: 40;
+      background: var(--roxo-terroso);
+      color: #fff;
+      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 25px 0 rgba(124,88,102,0.19);
+      font-size: 2rem;
+      cursor: pointer;
+      border: 5px solid var(--rosa-claro);
+      animation: floatpulse 2.5s infinite;
+      transition: background 0.3s, color 0.3s;
+    }
+    #whatsapp-float:hover { background: var(--rosa-claro); color: var(--roxo-terroso);}
+    @keyframes floatpulse {
+      0%,100% { box-shadow: 0 6px 25px 0 rgba(124,88,102,0.18);}
+      50% { box-shadow: 0 6px 35px 0 rgba(124,88,102,0.27);}
+    }
+    .servico-card {
+      transition: transform .2s, box-shadow .2s;
+      cursor:pointer;
+      position:relative;
+      overflow: hidden;
+    }
+    .servico-card:hover {
+      transform: translateY(-7px) scale(1.03);
+      box-shadow: 0 12px 40px 0 rgba(124,88,102,0.19);
+      z-index:2;
+    }
+    .servico-card:after {
+      content:'';
+      position:absolute;
+      top:0;left:0;width:100%;height:100%;
+      background:linear-gradient(120deg,rgba(124,88,102,0.07) 0%,rgba(219,200,194,0.07) 100%);
+      pointer-events:none;
+      z-index:1;
+    }
+    .navlink {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .navlink:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--roxo-terroso);
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      border-radius: 2px;
+    }
+    .navlink:hover:after { width: 100%; }
+    .navlink:hover { color: var(--roxo-terroso);}
+    @media (max-width: 640px) {
+      #popup-agenda { max-width: 95vw; top: 10%; }
+      #whatsapp-float {width:56px; height:56px; font-size:1.5rem;}
+    }
+  </style>
+</head>
+<body class="relative">
+  <!-- HEADER DE NAVEGAÇÃO -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[var(--verde-acinzentado)]/95 backdrop-blur-md shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
+      <a href="#inicio" class="flex items-center">
+        <span class="font-trajan font-semibold text-xl tracking-widest text-[var(--roxo-terroso)]">Dra. Camila Mozart</span>
+      </a>
+      <nav class="hidden md:flex gap-7 text-base font-trajan">
+        <a class="navlink" href="#inicio">Início</a>
+        <a class="navlink" href="#atendimentos">Atendimentos</a>
+        <a class="navlink" href="#curriculo">Currículo</a>
+        <a class="navlink" href="#contato">Contato</a>
+        <a class="navlink" href="blog.html">Blog</a>
+      </nav>
+      <a href="#agenda" class="ml-auto md:ml-0">
+        <button class="px-6 py-2 rounded-full font-herkings text-lg shadow-md transition bg-[var(--roxo-terroso)] text-white hover:bg-[var(--rosa-claro)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-claro)]">
+          <i class="fa-solid fa-calendar-check mr-2"></i>Agendar consulta
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO COM VÍDEO DE FUNDO E CTA -->
+  <section id="inicio" class="relative w-full h-[90vh] flex flex-col justify-center items-center overflow-hidden">
+    <video class="absolute inset-0 w-full h-full object-cover object-center z-0" autoplay muted loop playsinline poster="https://picsum.photos/seed/hero2/1200/800">
+      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-[var(--verde-acinzentado)]/80 backdrop-blur-sm z-10"></div>
+    <div class="relative z-20 flex flex-col items-center max-w-4xl mx-auto px-4">
+      <h1 class="font-valention text-4xl md:text-6xl text-[var(--roxo-terroso)] mb-4 text-center">Dra. Camila Mozart</h1>
+      <h2 class="font-herkings text-2xl md:text-3xl text-[var(--cinza-escuro)] mb-6 text-center">Saúde Mental da Mulher em São José dos Campos</h2>
+      <p class="font-herkings text-lg md:text-xl text-center max-w-2xl mb-8 bg-white/60 p-6 rounded-2xl backdrop-blur-sm">
+        Sou médica em Saúde Mental da Mulher, guiada pela profunda admiração pelas mulheres e por suas trajetórias de força e transformação.
+      </p>
+      <a href="#agenda" class="z-10">
+        <button class="px-8 py-4 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg transition duration-200 hover:bg-[var(--rosa-claro)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-claro)]">
+          <i class="fa-solid fa-calendar-day mr-2"></i> Agendar Consulta
+        </button>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOBRE CAMILA -->
+  <section class="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-12 items-center" id="sobre">
+    <div class="flex-1 flex justify-center mb-8 md:mb-0">
+      <img src="https://picsum.photos/seed/dra-camila2/350/420" alt="Dra. Camila Mozart" class="rounded-3xl border-4 border-[var(--rosa-claro)] shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300">
+    </div>
+    <div class="flex-1">
+      <h3 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-5">Conheça a Dra. Camila Mozart</h3>
+      <div class="font-trajan text-lg md:text-xl text-[var(--cinza-escuro)] leading-relaxed">
+        <p>
+          Sou médica em Saúde Mental da Mulher, guiada pela profunda admiração pelas mulheres e por suas trajetórias de força e transformação. <br>
+          Acredito que, ao longo da vida, percorremos inúmeras metamorfoses, e minha missão é acolher, compreender e auxiliar cada mulher em suas fases e desafios, proporcionando um espaço seguro para o autoconhecimento e o equilíbrio emocional.
+        </p>
+        <p class="mt-3">
+          Com uma abordagem sensível e humanizada, buscamos promover saúde mental e bem-estar, ajudando meus pacientes a ressignificarem suas histórias com mais leveza e confiança.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX CTA -->
+  <section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('https://picsum.photos/seed/cta-parallax/1920/1080');">
+    <div class="absolute inset-0 bg-[var(--roxo-terroso)]/60 backdrop-blur-[2px]"></div>
+    <div class="relative z-10 text-center px-4">
+      <h3 class="font-valention text-4xl md:text-5xl text-white mb-4">Cuide da sua saúde mental</h3>
+      <p class="font-trajan text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Agende sua consulta e descubra como podemos trabalhar juntas pelo seu bem-estar emocional
+      </p>
+      <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
+        <button class="px-8 py-4 rounded-full bg-white text-[var(--roxo-terroso)] font-herkings text-xl shadow-lg hover:bg-[var(--rosa-claro)] transition duration-300 border-2 border-[var(--rosa-claro)]">
+          <i class="fab fa-whatsapp mr-2"></i> Agende sua consulta
+        </button>
+      </a>
+    </div>
+  </section>
+
+  <!-- QUANDO AGENDAR SUA CONSULTA (DESTAQUE) -->
+  <section class="w-full bg-[var(--rosa-claro)]/40 py-12" id="agenda">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1">
+        <h2 class="font-herkings text-2xl md:text-3xl text-[var(--roxo-terroso)] mb-4">Quando agendar sua consulta</h2>
+        <p class="font-trajan text-base md:text-lg text-[var(--cinza-escuro)] mb-4">
+          Essencial para compreender as particularidades da saúde mental das mulheres, que atravessam ciclos de vida marcados por transformações físicas, emocionais e sociais. Questões como oscilações hormonais, maternidade, sobrecarga mental, relações e pressões socioculturais impactam diretamente o bem-estar psicológico, tornando fundamental um olhar especializado e sensível.
+        </p>
+        <p class="font-trajan text-base md:text-lg text-[var(--cinza-escuro)] mb-2">
+          Ao oferecer um espaço de escuta, acolhimento e tratamento adequado, esse acompanhamento fortalece mulheres em sua jornada de autoconhecimento e equilíbrio emocional, promovendo saúde mental e qualidade de vida.
+        </p>
+        <div class="mt-6">
+          <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
+            <button class="px-7 py-3 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--rosa-claro)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-claro)]">
+              <i class="fa-solid fa-calendar-day mr-2"></i> Agendar Consulta
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="flex-1 flex flex-col items-center">
+        <span class="font-herkings text-xl text-[var(--roxo-terroso)] mb-3">Cuide de você:</span>
+        <span class="font-trajan text-lg mb-2 text-center">Sua saúde em primeiro lugar</span>
+        <p class="font-trajan text-base text-center mb-3">
+          Acolhimento, equilíbrio e saúde mental em cada fase da sua vida.
+        </p>
+        <img src="https://picsum.photos/seed/cuidado/220/180" class="rounded-xl border-2 border-[var(--rosa-claro)] shadow" alt="Cuide de você">
+      </div>
+    </div>
+  </section>
+
+  <!-- QUANDO PROCURAR -->
+  <section id="quando" class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-5 text-center">Quando procurar</h2>
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1">
+        <p class="font-trajan text-lg mb-3">
+          Saiba quando agendar uma consulta para cuidar da sua Saúde Mental.
+        </p>
+        <p class="font-trajan text-base mb-3">
+          A saúde mental feminina torna-se um cuidado essencial e um processo natural ao longo das diferentes fases da vida. Mudanças hormonais, desafios emocionais e sobrecarga do dia a dia impactam o bem-estar psicológico, tornando fundamental o acompanhamento especializado.
+        </p>
+        <ul class="list-disc pl-5 font-trajan mb-3">
+          <li>Ansiedade e depressão: insônia, irritabilidade, cansaço excessivo, falta de motivação, crises de choro, medo constante, dificuldade de concentração.</li>
+          <li>Gestação e puerpério: acompanhamento e tratamento de transtornos emocionais.</li>
+          <li>Oscilações hormonais, sobrecarga mental, relações e pressões socioculturais.</li>
+        </ul>
+        <p class="font-trajan text-base">
+          Com acolhimento e tratamento adequado, cada mulher compreende suas emoções e resgata seu equilíbrio com mais leveza e qualidade de vida.
+        </p>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <img src="https://picsum.photos/seed/quando/320/260" alt="Saúde mental" class="rounded-2xl border-2 border-[var(--rosa-claro)] shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX CTA 2 -->
+  <section class="relative h-[500px] w-full flex items-center justify-center overflow-hidden" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('https://picsum.photos/seed/mental-health/1920/1080');">
+    <div class="absolute inset-0 bg-gradient-to-r from-[var(--roxo-terroso)]/80 to-[var(--rosa-claro)]/60 backdrop-blur-[1px]"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 text-white">
+        <h3 class="font-herkings text-3xl md:text-4xl mb-6">Transforme sua jornada emocional</h3>
+        <div class="font-trajan text-lg mb-8 space-y-4">
+          <p class="leading-relaxed">
+            Cada fase da vida traz desafios únicos. Não precisa enfrentá-los sozinha.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fa-solid fa-heart mr-3 text-[var(--rosa-claro)]"></i>
+              Atendimento humanizado e personalizado
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-user-shield mr-3 text-[var(--rosa-claro)]"></i>
+              Ambiente seguro e acolhedor
+            </li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-comments mr-3 text-[var(--rosa-claro)]"></i>
+              Suporte profissional especializado
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-1 bg-white/10 backdrop-blur-md p-8 rounded-2xl border-2 border-white/20">
+        <div class="text-center">
+          <span class="font-valention text-3xl text-white mb-4 block">Comece hoje mesmo</span>
+          <p class="font-trajan text-white/90 mb-6">
+            Dê o primeiro passo em direção ao seu bem-estar emocional
+          </p>
+          <div class="space-y-4">
+            <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="block">
+              <button class="w-full px-6 py-3 rounded-full bg-white text-[var(--roxo-terroso)] font-herkings text-lg shadow-lg hover:bg-[var(--rosa-claro)] transition duration-300 border-2 border-[var(--rosa-claro)] flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i> Agendar Consulta
+              </button>
+            </a>
+            <a href="tel:12991069893" class="block">
+              <button class="w-full px-6 py-3 rounded-full bg-transparent text-white font-herkings text-lg border-2 border-white hover:bg-white/10 transition duration-300 flex items-center justify-center">
+                <i class="fa-solid fa-phone mr-2"></i> (12) 99106-9893
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATENDIMENTOS (DINÂMICO, SLIDER, CARDS INTERATIVOS) -->
+  <section id="atendimentos" class="w-full bg-[var(--rosa-claro)]/40 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-10 text-center">Principais Atendimentos</h3>
+      <div id="servicos-slider" class="flex gap-7 overflow-x-auto pb-3 snap-x snap-mandatory">
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-laptop-medical text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Teleconsulta</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Atendimento remoto em Saúde Mental, acesso especializado sem deslocamento.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-baby text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Acompanhamento durante a gestação</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Suporte à saúde mental da gestante e bem-estar do bebê.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-venus text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Saúde mental perinatal</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Cuidado durante gestação e puerpério, prevenção e tratamento.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-user-nurse text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Tratamento pós-parto</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Abordagem de depressão, ansiedade e psicose puerperal.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-head-side-virus text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Depressão gestacional</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Tratamento medicamentoso e/ou psicoterapêutico durante a gravidez.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-baby-carriage text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Transtornos mentais no puerpério</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Manejo seguro de depressão pós-parto, ansiedade, bipolaridade.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-stethoscope text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Transtornos período periconcepcional</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Cuidados antes e após a concepção, ajustes no tratamento.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-pregnant-woman text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Transtornos mentais na gravidez</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Manejo de depressão, ansiedade e bipolaridade na gestação.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-heart text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Depressão pós-parto</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Abordagem psicoterapêutica e, se necessário, psicofármacos.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-female text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Saúde mental da mulher</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Prevenção, diagnóstico e tratamento de transtornos mentais femininos.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-file-medical text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Atestado de sanidade mental</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Documento que atesta a capacidade mental para atividades específicas.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-notes-medical text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Laudo médico</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Relatório técnico detalhado para perícias e processos jurídicos.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-user-md text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Consultoria para gestantes</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Ajuste de psicofármacos para gestação, parto e amamentação.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-hands-helping text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Interconsulta de Saúde Mental</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Apoio a outras especialidades médicas no manejo de transtornos.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-ambulance text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Consulta de Saúde Mental Urgente</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Atendimento imediato para quadros agudos, crises e encaminhamentos.</div>
+        </div>
+        <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-claro)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
+          <i class="fa-solid fa-baby text-4xl text-[var(--roxo-terroso)] mb-4"></i>
+          <div class="font-herkings text-xl mb-2">Acompanhamento gestacional e puperperal</div>
+          <div class="text-[var(--cinza-escuro)] text-base text-center">Cuidado integral de saúde mental, gestação e pós-parto.</div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-8">
+        <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank"><button class="px-7 py-3 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg transition duration-200 hover:bg-[var(--rosa-claro)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-claro)]">
+          <i class="fa-solid fa-calendar-day mr-2"></i> Agendar Consulta
+        </button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRÍCULO -->
+  <section class="max-w-5xl mx-auto px-4 py-16" id="curriculo">
+    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-6 text-center">Currículo</h2>
+    <div class="flex flex-col md:flex-row gap-10">
+      <div class="flex-1">
+        <h3 class="font-herkings text-xl text-[var(--roxo-terroso)] mb-2">Formação Acadêmica</h3>
+        <ul class="font-trajan text-base mb-4">
+          <li>• Medicina – Faculdade Ciências Médicas de São José dos Campos (2017-2023)</li>
+          <li>• Pós-graduação em Psiquiatria – Santa Casa de São Paulo (2024 – atual)</li>
+        </ul>
+        <h3 class="font-herkings text-xl text-[var(--roxo-terroso)] mb-2">Experiência Profissional</h3>
+        <ul class="font-trajan text-base">
+          <li>• Atendimento em Urgência e Emergência Psiquiátrica – Hospital Francisca Júlia / CVV (2023 – atual)</li>
+          <li>• Ambulatório de Saúde Mental Feminina – (2024 – atual)</li>
+        </ul>
+      </div>
+      <div class="flex-1 flex items-center justify-center">
+        <img src="https://picsum.photos/seed/curriculo/280/350" alt="Currículo Dra Camila" class="rounded-2xl border-2 border-[var(--rosa-claro)] shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-10" id="contato">
+    <div class="flex-1">
+      <h3 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-4">Contato</h3>
+      <div class="font-trajan text-lg mb-2">
+        <span class="font-herkings text-base text-[var(--roxo-terroso)]">Endereço:</span> <br>
+        Clínica Helbor Escritórios Jardim Das Colinas <br>
+        Av. São João, 2375 – Andar 11 – Sala 1106 <br>
+        Jardim Aquarius, São José dos Campos – SP, 12242-000 <br>
+        <span class="font-herkings text-base text-[var(--roxo-terroso)]">Telefone:</span> <a href="tel:12991069893" class="underline hover:text-[var(--roxo-terroso)]">(12) 99106-9893</a>
+      </div>
+      <form id="contact-form" class="flex flex-col gap-4 mt-4">
+        <input type="text" required name="nome" placeholder="Nome" class="rounded-lg px-4 py-3 bg-[var(--rosa-claro)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
+        <input type="email" required name="email" placeholder="E-mail" class="rounded-lg px-4 py-3 bg-[var(--rosa-claro)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
+        <textarea required name="mensagem" rows="4" placeholder="Mensagem" class="rounded-lg px-4 py-3 bg-[var(--rosa-claro)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]"></textarea>
+        <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--rosa-claro)] hover:text-[var(--roxo-terroso)] transition border-2 border-[var(--rosa-claro)]">
+          <i class="fab fa-whatsapp mr-1"></i> Enviar para WhatsApp
+        </button>
+      </form>
+    </div>
+    <div class="flex-1 flex flex-col items-center justify-center">
+      <iframe title="Mapa da clínica" class="w-full h-72 rounded-2xl shadow-lg border-2 border-[var(--rosa-claro)]" loading="lazy"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.813517902643!2d-45.93392778447583!3d-23.22370118486516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4c9cae0a2bff%3A0x16c4252a2f8b1e48!2sHelbor%20Escrit%C3%B3rios%20Jardim%20Das%20Colinas!5e0!3m2!1spt-BR!2sbr!4v1683822476829!5m2!1spt-BR!2sbr"></iframe>
+      <div class="mt-3 font-trajan text-base text-[var(--cinza-escuro)] text-center">
+        Av. São João, 2375 – Andar 11 – Sala 1106<br>
+        Jardim Aquarius, São José dos Campos – SP, 12242-000
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="max-w-6xl mx-auto px-4 py-16 bg-[var(--rosa-claro)]/10" id="blog">
+    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-8 text-center">Blog</h2>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid gap-8">
+        <article class="bg-white rounded-2xl p-8 shadow-lg transition-transform hover:transform hover:scale-[1.02]">
+          <div class="flex flex-col">
+            <h3 class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-3">Saúde Mental Feminina: Um Olhar Especializado</h3>
+            <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">24 de abril de 2024</div>
+            <p class="font-trajan text-base text-[var(--cinza-escuro)] mb-6 leading-relaxed">
+              Em breve, compartilharei aqui conteúdos relevantes sobre saúde mental feminina, abordando temas como ansiedade, 
+              depressão, maternidade e os desafios únicos que nós, mulheres, enfrentamos em diferentes fases da vida.
+            </p>
+            <div class="flex justify-end">
+              <button disabled class="px-6 py-2 rounded-full bg-[var(--roxo-terroso)]/10 text-[var(--roxo-terroso)] font-herkings text-base border border-[var(--roxo-terroso)]/20 cursor-not-allowed transition">
+                Em breve
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <div class="text-center">
+          <p class="font-trajan text-lg text-[var(--cinza-escuro)] mb-4">
+            Fique atenta! Em breve, compartilharei conteúdos exclusivos sobre saúde mental feminina.
+          </p>
+          <button disabled class="px-8 py-3 rounded-full bg-[var(--roxo-terroso)]/10 text-[var(--roxo-terroso)] font-herkings text-lg border border-[var(--roxo-terroso)]/20 cursor-not-allowed transition">
+            Mais artigos em breve
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM FEED -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-4">Siga no Instagram</h2>
+      <p class="font-trajan text-lg text-[var(--cinza-escuro)] max-w-2xl mx-auto">
+        Acompanhe conteúdos exclusivos sobre saúde mental feminina e fique por dentro das novidades
+      </p>
+      <a href="https://instagram.com/" target="_blank" class="inline-block mt-4 text-[var(--roxo-terroso)] hover:text-[var(--rosa-claro)] transition-colors">
+        <span class="font-trajan">@dracamilamozart</span>
+        <i class="fab fa-instagram ml-2"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Post 1 -->
+      <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+        <img src="https://picsum.photos/seed/insta1/600/600" alt="Post do Instagram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--roxo-terroso)]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div class="text-white">
+            <p class="font-trajan text-sm mb-3">
+              Saúde mental é prioridade! Cuide do seu bem-estar emocional e viva com mais equilíbrio. 💜 #SaudeMental #BemEstar
+            </p>
+            <div class="flex items-center gap-4">
+              <span class="flex items-center">
+                <i class="fas fa-heart mr-2"></i>
+                245
+              </span>
+              <span class="flex items-center">
+                <i class="fas fa-comment mr-2"></i>
+                18
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+        <img src="https://picsum.photos/seed/insta2/600/600" alt="Post do Instagram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--roxo-terroso)]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div class="text-white">
+            <p class="font-trajan text-sm mb-3">
+              Ansiedade na gestação? Vamos conversar sobre isso! Entenda como cuidar da sua saúde mental nesse momento especial. 🤰 #GestacaoSaudavel
+            </p>
+            <div class="flex items-center gap-4">
+              <span class="flex items-center">
+                <i class="fas fa-heart mr-2"></i>
+                312
+              </span>
+              <span class="flex items-center">
+                <i class="fas fa-comment mr-2"></i>
+                24
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+        <img src="https://picsum.photos/seed/insta3/600/600" alt="Post do Instagram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--roxo-terroso)]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div class="text-white">
+            <p class="font-trajan text-sm mb-3">
+              Autocuidado não é egoísmo! Aprenda a priorizar sua saúde mental e viva com mais leveza. ✨ #Autocuidado #SaudeMentalFeminina
+            </p>
+            <div class="flex items-center gap-4">
+              <span class="flex items-center">
+                <i class="fas fa-heart mr-2"></i>
+                428
+              </span>
+              <span class="flex items-center">
+                <i class="fas fa-comment mr-2"></i>
+                32
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://instagram.com/" target="_blank">
+        <button class="px-8 py-3 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--rosa-claro)] transition duration-300 border-2 border-[var(--rosa-claro)]">
+          <i class="fab fa-instagram mr-2"></i> Ver mais no Instagram
+        </button>
+      </a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[var(--cinza-escuro)] text-[var(--verde-acinzentado)] font-trajan text-base py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-col items-center md:items-start">
+        <img src="https://picsum.photos/seed/logofooter/54/54" alt="Logo Dra. Camila Mozart" class="mb-2 rounded-full border-2 border-[var(--rosa-claro)]">
+        <div class="mb-2 font-semibold">Dra. Camila Mozart - Médica - CRM 246686</div>
+        <div>Clínica Helbor Escritórios Jardim Das Colinas</div>
+        <div>Av. São João, 2375 – Andar 11 – Sala 1106</div>
+        <div>Jardim Aquarius, São José dos Campos – SP, 12242-000</div>
+        <div>Tel: (12) 99106-9893</div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <a href="#inicio" class="hover:underline">Início</a>
+        <a href="#atendimentos" class="hover:underline">Atendimentos</a>
+        <a href="#curriculo" class="hover:underline">Currículo</a>
+        <a href="#contato" class="hover:underline">Contato</a>
+        <a href="#blog" class="hover:underline">Blog</a>
+      </div>
+      <div class="flex gap-5">
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="text-xl hover:text-[var(--rosa-claro)]"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5512991069893" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-xl hover:text-[var(--rosa-claro)]"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:" aria-label="E-mail" class="text-xl hover:text-[var(--rosa-claro)]"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-xs text-[var(--rosa-claro)] opacity-80">
+      Desenvolvido com <span class="text-pink-400">❤</span> pelo iMedicina. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante WhatsApp -->
+  <div id="whatsapp-float" aria-label="Agendar pelo WhatsApp" title="Agendar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+
+  <!-- Pop-up agendamento -->
+  <div id="popup-agenda" class="shadow-xl">
+    <button onclick="document.getElementById('popup-agenda').style.display='none'" class="absolute top-3 right-3 text-[var(--roxo-terroso)] hover:text-[var(--cinza-escuro)] text-lg" aria-label="Fechar"><i class="fa fa-times"></i></button>
+    <div class="flex flex-col items-center text-center gap-2">
+      <i class="fa-solid fa-calendar-day text-4xl text-[var(--roxo-terroso)] mb-1"></i>
+      <div class="font-herkings text-xl text-[var(--roxo-terroso)]">Agende sua consulta!</div>
+      <div class="font-trajan text-base text-[var(--cinza-escuro)] mb-2">
+        Atendimento humanizado e exclusivo para você.<br>
+        Clique abaixo e fale agora pelo WhatsApp.
+      </div>
+      <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" rel="noopener">
+        <button class="px-6 py-2 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-md hover:bg-[var(--rosa-claro)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-claro)] mt-2">
+          <i class="fab fa-whatsapp mr-1"></i> Agendar pelo WhatsApp
+        </button>
+      </a>
+    </div>
+  </div>
+  <script>
+    // Pop-up agendamento ao rolar a página
+    let popupShown = false;
+    window.addEventListener('scroll', function() {
+      if (!popupShown && window.scrollY > 80) {
+        document.getElementById('popup-agenda').classList.add('show');
+        popupShown = true;
+      }
+    });
+    // Botão flutuante WhatsApp
+    document.getElementById('whatsapp-float').onclick = function() {
+      window.open('https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21', '_blank');
+    };
+    // Formulário redireciona para WhatsApp
+    document.getElementById('contact-form').onsubmit = function(e) {
+      e.preventDefault();
+      const nome = encodeURIComponent(this.nome.value);
+      const email = encodeURIComponent(this.email.value);
+      const mensagem = encodeURIComponent(this.mensagem.value);
+      const text = `Olá Dra. Camila!%0A%0ANome: ${nome}%0AE-mail: ${email}%0AMensagem: ${mensagem}`;
+      window.open('https://wa.me/5512991069893?text=' + text, '_blank');
+      return false;
+    };
+  </script>
+</body>
+</html>

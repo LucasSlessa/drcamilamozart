@@ -42,21 +42,6 @@
     ::-webkit-scrollbar { width: 10px; background: var(--off-white);}
     ::-webkit-scrollbar-thumb { background: var(--cinza-escuro); border-radius: 7px;}
 
-    /* New styles for hero background image */
-    .hero-image-bg {
-      background-image: url('capa1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1; /* Place it behind the texture overlay and content */
-    }
-
-    @media (max-width: 768px) {
-      .hero-image-bg {
-        filter: blur(5px); /* Apply blur on screens smaller than 768px */
-      }
-    }
-
     #whatsapp-float {
       position: fixed;
       bottom: 2.2rem;
@@ -144,7 +129,7 @@
         <a class="navlink" href="blog.html">Blog</a>
       </nav>
       <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="ml-auto md:ml-0">
-        <button class="px-6 py-2 rounded-full font-herkings text-lg shadow-md transition bg-[var(--roxo-terroso)] text-white hover:bg-[var(--rosa-antigo)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-antigo)]">
+        <button class="px-6 py-2 rounded-full font-herkings text-lg shadow-md transition bg-[var(--verde-oliva)] text-white hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
           <i class="fa-brands fa-whatsapp mr-2"></i>Agendar consulta
         </button>
       </a>
@@ -154,7 +139,6 @@
   <!-- HERO -->
   <section id="inicio" class="relative w-full min-h-[95vh] flex items-center overflow-hidden bg-[#E8E1D8] pt-20">
     <!-- Background image container -->
-    <div class="absolute inset-0 hero-image-bg"></div> 
     
     <!-- Texture overlay -->
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall-3.png')] opacity-30"></div>
@@ -170,14 +154,22 @@
           Estética e Cirúrgica
         </h2>
         <div class="w-16 h-0.5 bg-[var(--verde-oliva)] mb-6"></div>
-        <p class="font-trajan text-lg text-[var(--cinza-escuro)] mb-8 opacity-90">
-          Sua pele reflete quem você é
+       
+        <p class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-4">
+          Você não precisa dar conta de tudo sozinha.
+        </p>
+        <p class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-8">
+          A exaustão que você sente não é frescura. É um sinal: sua mente precisa de cuidado.
         </p>
         <a href="#sobre" class="inline-block">
           <button class="px-8 py-3 bg-[var(--verde-oliva)] text-white font-trajan text-lg rounded-full transition-all hover:bg-[var(--roxo-terroso)]">
             Conheça a Dra. Camila
           </button>
         </a>
+      </div>
+      <!-- Right Image -->
+      <div class="w-full lg:w-1/2 relative hidden md:block"> <!-- Hidden on mobile, block on md and up -->
+        <img src="capa1.jpg" alt="Dra. Camila Mozart" class="w-full h-auto max-h-[800px] object-cover rounded-lg shadow-xl">
       </div>
     </div>
   </section>
@@ -201,7 +193,7 @@
   </section>
 
   <!-- PARALLAX CTA -->
-  <section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2091&auto=format&fit=crop');">
+  <section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('capa.webp');">
     <div class="absolute inset-0 bg-[var(--roxo-terroso)]/60 backdrop-blur-[2px]"></div>
     <div class="relative z-10 text-center px-4">
       <h3 class="font-valention text-4xl md:text-5xl text-white mb-4">Cuide da sua saúde mental</h3>
@@ -209,7 +201,7 @@
         Agende sua consulta e descubra como podemos trabalhar juntas pelo seu bem-estar emocional
       </p>
       <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
-        <button class="px-8 py-4 rounded-full bg-white text-[var(--verde-oliva)] font-herkings text-xl shadow-lg hover:bg-[var(--rosa-antigo)] transition duration-300 border-2 border-[var(--rosa-antigo)]">
+        <button class="px-8 py-4 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-xl shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)]">
           <i class="fa-brands fa-whatsapp mr-2"></i> Agende sua consulta
         </button>
       </a>
@@ -229,7 +221,7 @@
         </p>
         <div class="mt-6">
           <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
-            <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--rosa-antigo)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-antigo)]">
+            <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
               <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Consulta
             </button>
           </a>
@@ -306,7 +298,7 @@
           </p>
           <div class="space-y-4">
             <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="block">
-              <button class="w-full px-6 py-3 rounded-full bg-white text-[var(--verde-oliva)] font-herkings text-lg shadow-lg hover:bg-[var(--rosa-antigo)] transition duration-300 border-2 border-[var(--rosa-antigo)] flex items-center justify-center">
+              <button class="w-full px-6 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)] flex items-center justify-center">
                 <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Consulta
               </button>
             </a>
@@ -508,7 +500,7 @@
       </div>
       <div class="flex justify-center mt-8">
         <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
-          <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg transition duration-200 hover:bg-[var(--rosa-antigo)] hover:text-[var(--roxo-terroso)] border-2 border-[var(--rosa-antigo)]">
+          <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg transition duration-200 hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
             <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Consulta
           </button>
         </a>
@@ -553,7 +545,7 @@
         <input type="text" required name="nome" placeholder="Nome" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
         <input type="email" required name="email" placeholder="E-mail" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
         <textarea required name="mensagem" rows="4" placeholder="Mensagem" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]"></textarea>
-        <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--rosa-antigo)] hover:text-[var(--roxo-terroso)] transition border-2 border-[var(--rosa-antigo)]">
+        <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white transition border-2 border-[var(--verde-oliva)]">
           <i class="fab fa-whatsapp mr-1"></i> Enviar para WhatsApp
         </button>
       </form>
@@ -593,7 +585,7 @@
           <p class="font-trajan text-lg text-[var(--cinza-escuro)] mb-4">
             Fique atenta! Em breve, compartilharei conteúdos exclusivos sobre saúde mental feminina.
           </p>
-          <button disabled class="px-8 py-3 rounded-full bg-[var(--verde-oliva)]/10 text-[var(--roxo-terroso)] font-herkings text-lg border border-[var(--roxo-terroso)]/20 cursor-not-allowed transition">
+          <button disabled class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-[var(--roxo-terroso)] font-herkings text-lg border border-[var(--verde-oliva)] cursor-not-allowed transition">
             Mais artigos em breve
           </button>
         </div>
@@ -677,7 +669,7 @@
 
     <div class="text-center mt-10">
       <a href="https://instagram.com/" target="_blank">
-        <button class="px-8 py-3 rounded-full bg-[var(--roxo-terroso)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--rosa-antigo)] transition duration-300 border-2 border-[var(--rosa-antigo)]">
+        <button class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)]">
           <i class="fab fa-instagram mr-2"></i> Ver mais no Instagram
         </button>
       </a>
@@ -685,7 +677,7 @@
   </section>
 
   <!-- RODAPÉ -->
-  <footer class="bg-[var(--cinza-escuro)] text-[var(--verde-acinzentado)] font-trajan text-base py-8">
+  <footer class="bg-[var(--cinza-escuro)] text-[var(--off-white)] font-trajan text-base py-8">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex flex-col items-center md:items-start">
         <img src="https://picsum.photos/seed/logofooter/54/54" alt="Logo Dra. Camila Mozart" class="mb-2 rounded-full border-2 border-[var(--rosa-antigo)]">

@@ -42,6 +42,21 @@
     ::-webkit-scrollbar { width: 10px; background: var(--off-white);}
     ::-webkit-scrollbar-thumb { background: var(--cinza-escuro); border-radius: 7px;}
 
+    /* New styles for hero background image */
+    .hero-image-bg {
+      background-image: url('capa1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1; /* Place it behind the texture overlay and content */
+    }
+
+    @media (max-width: 768px) {
+      .hero-image-bg {
+        filter: blur(5px); /* Apply blur on screens smaller than 768px */
+      }
+    }
+
     #whatsapp-float {
       position: fixed;
       bottom: 2.2rem;
@@ -137,11 +152,15 @@
   </header>
 
   <!-- HERO -->
-  <section id="inicio" class="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-[#E8E1D8]">
+  <section id="inicio" class="relative w-full min-h-[95vh] flex items-center overflow-hidden bg-[#E8E1D8] pt-20">
+    <!-- Background image container -->
+    <div class="absolute inset-0 hero-image-bg"></div> 
+    
+    <!-- Texture overlay -->
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall-3.png')] opacity-30"></div>
     
     <!-- Left Content -->
-    <div class="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center">
+    <div class="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center relative z-10"> 
       <div class="w-full lg:w-1/2 relative z-20 lg:pr-12 mb-12 lg:mb-0">
         <h1 class="font-herkings text-4xl lg:text-5xl xl:text-6xl text-[var(--cinza-escuro)] mb-4">
           Dra. Camila Mozart
@@ -160,14 +179,7 @@
           </button>
         </a>
       </div>
-
-      <!-- Right Image -->
-      <div class="w-full lg:w-1/2 relative">
-        <img src="capa1.jpg" alt="Dra. Camila Mozart" class="w-full h-auto rounded-lg shadow-xl">
-      </div>
     </div>
-
-  
   </section>
 
   <!-- SOBRE CAMILA -->

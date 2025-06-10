@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+git<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,9 @@
   <meta name="description" content="Dra. Camila Mozart - Médica em Saúde Mental da Mulher. Acolhimento, equilíbrio e cuidado em todas as fases da vida feminina em São José dos Campos.">
   <meta name="keywords" content="Saúde mental da mulher, psiquiatria feminina, consulta online, Dra Camila Mozart, São José dos Campos, gestação, puerpério, depressão, ansiedade">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.cdnfonts.com/css/hello-august" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/685/685655.png">
   <style>
@@ -19,9 +21,12 @@
       --verde-oliva: #818B54;
       --roxo-terroso: #7C5B66;
     }
-    .font-valention { font-family: 'Great Vibes', cursive; }
-    .font-herkings { font-family: 'Playfair Display', serif; }
-    .font-trajan { font-family: 'EB Garamond', serif; }
+    .font-hello-august { 
+      font-family: 'Hello August', cursive;
+    }
+    .font-aileron { 
+      font-family: 'Aileron', sans-serif;
+    }
     body::before {
       content: '';
       position: fixed;
@@ -35,7 +40,7 @@
       background: var(--off-white);
       position: relative;
       min-height: 100vh;
-      font-family: 'EB Garamond', serif;
+      font-family: 'Aileron', sans-serif;
       color: var(--cinza-escuro);
       scroll-behavior: smooth;
     }
@@ -115,13 +120,13 @@
   </style>
 </head>
 <body class="relative">
-  <!-- HEADER DE NAVEGAÇÃO -->
+ 
   <header class="fixed top-0 left-0 w-full z-50 bg-[var(--off-white)]/95 backdrop-blur-md shadow-md">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
       <a href="#inicio" class="flex items-center">
-        <span class="font-trajan font-semibold text-xl tracking-widest text-[var(--roxo-terroso)]">Dra. Camila Mozart</span>
+        <span class="font-hello-august text-xl tracking-widest text-[var(--roxo-terroso)]">Dra. Camila Mozart</span>
       </a>
-      <nav class="hidden md:flex gap-7 text-base font-trajan">
+      <nav class="hidden md:flex gap-7 text-base font-aileron">
         <a class="navlink" href="#inicio">Início</a>
         <a class="navlink" href="#atendimentos">Atendimentos</a>
         <a class="navlink" href="#curriculo">Currículo</a>
@@ -129,7 +134,7 @@
         <a class="navlink" href="blog.html">Blog</a>
       </nav>
       <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="ml-auto md:ml-0">
-        <button class="px-6 py-2 rounded-full font-herkings text-lg shadow-md transition bg-[var(--verde-oliva)] text-white hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
+        <button class="px-6 py-2 rounded-full font-aileron text-lg shadow-md transition bg-[var(--verde-oliva)] text-white hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
           <i class="fa-brands fa-whatsapp mr-2"></i>Agendar consulta
         </button>
       </a>
@@ -137,38 +142,53 @@
   </header>
 
   <!-- HERO -->
-  <section id="inicio" class="relative w-full min-h-[95vh] flex items-center overflow-hidden bg-[#E8E1D8] pt-20">
-    <!-- Background image container -->
+  <section id="inicio" class="relative w-full min-h-[95vh] md:min-h-[95vh] min-h-screen flex flex-col justify-end overflow-hidden bg-[#E8E1D8] pt-16 md:pt-20">
+    <!-- Background image container for mobile -->
+    <div class="absolute inset-0 md:hidden">
+      <img src="capa1.jpg" alt="Dra. Camila Mozart" class="w-full h-full object-cover opacity-30">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#E8E1D8]/30"></div>
+    </div>
     
     <!-- Texture overlay -->
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall-3.png')] opacity-30"></div>
     
-    <!-- Left Content -->
-    <div class="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center relative z-10"> 
-      <div class="w-full lg:w-1/2 relative z-20 lg:pr-12 mb-12 lg:mb-0">
-        <h1 class="font-herkings text-4xl lg:text-5xl xl:text-6xl text-[var(--cinza-escuro)] mb-4">
+    <!-- Content Container -->
+    <div class="container mx-auto px-4 lg:px-8 flex flex-col h-full md:flex-row md:items-center relative z-10 justify-end pb-12">
+      <!-- Left Content (text and buttons) -->
+      <div class="w-full lg:w-1/2 relative z-20 lg:pr-12 mb-12 lg:mb-0 flex flex-col items-center text-center md:items-start md:text-left justify-end">
+        <h1 class="font-hello-august text-4xl lg:text-5xl xl:text-6xl text-[var(--cinza-escuro)] mb-4">
           Dra. Camila Mozart
         </h1>
-        <h2 class="font-trajan text-2xl text-[var(--cinza-escuro)] mb-3">
-          Dermatologista Clínica,<br>
-          Estética e Cirúrgica
+        <h2 class="font-aileron text-lg md:text-2xl text-[var(--cinza-escuro)] mb-3">
+          Saúde Mental da Mulher
         </h2>
-        <div class="w-16 h-0.5 bg-[var(--verde-oliva)] mb-6"></div>
+        <div class="w-16 h-0.5 bg-[var(--verde-oliva)] mb-6 md:mx-0 mx-auto"></div>
         
-        <p class="font-herkings text-xl text-[var(--roxo-terroso)] mb-4">
-          Você não precisa dar conta de tudo sozinha.
-        </p>
-        <p class="font-herkings text-xl text-[var(--roxo-terroso)] mb-8">
-          A exaustão que você sente não é frescura. É um sinal: sua mente precisa de cuidado.
-        </p>
-        <a href="#sobre" class="inline-block">
-          <button class="px-8 py-3 bg-[var(--verde-oliva)] text-white font-trajan text-lg rounded-full transition-all hover:bg-[var(--roxo-terroso)]">
-            Conheça a Dra. Camila
-          </button>
-        </a>
+        <div class="space-y-6 mb-8 w-full">
+          <p class="font-aileron text-base md:text-2xl text-[var(--roxo-terroso)] leading-relaxed">
+            Você não precisa dar conta de tudo sozinha.
+          </p>
+          <p class="font-aileron text-base md:text-2xl text-[var(--roxo-terroso)] leading-relaxed">
+            A exaustão que você sente não é frescura.<br>
+            É um sinal: sua mente precisa de cuidado.
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center md:justify-start">
+          <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="inline-block w-full sm:w-auto">
+            <button class="w-full px-8 py-3 bg-[var(--verde-oliva)] text-white font-aileron text-lg rounded-full transition-all hover:bg-[var(--roxo-terroso)]">
+              <i class="fa-brands fa-whatsapp mr-2"></i>Agendar Consulta
+            </button>
+          </a>
+          <a href="#sobre" class="inline-block w-full sm:w-auto">
+            <button class="w-full px-8 py-3 bg-transparent text-[var(--roxo-terroso)] font-aileron text-lg rounded-full transition-all border-2 border-[var(--roxo-terroso)] hover:bg-[var(--roxo-terroso)] hover:text-white">
+              Conhecer Mais
+            </button>
+          </a>
+        </div>
       </div>
-      <!-- Right Image -->
-      <div class="w-full lg:w-1/2 relative hidden md:block"> <!-- Hidden on mobile, block on md and up -->
+      <!-- Right Image (desktop only) -->
+      <div class="w-full lg:w-1/2 relative hidden md:block">
         <img src="capa1.jpg" alt="Dra. Camila Mozart" class="w-full h-auto max-h-[800px] object-cover rounded-lg shadow-xl">
       </div>
     </div>
@@ -180,8 +200,8 @@
       <img src="camila.webp" alt="Dra. Camila Mozart" class="rounded-3xl border-4 border-[var(--rosa-antigo)] shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300">
     </div>
     <div class="flex-1">
-      <h3 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-5">Conheça a Dra. Camila Mozart</h3>
-      <div class="font-trajan text-lg md:text-xl text-[var(--cinza-escuro)] leading-relaxed">
+      <h3 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-5">Conheça a Dra. Camila Mozart</h3>
+      <div class="font-aileron text-lg md:text-xl text-[var(--cinza-escuro)] leading-relaxed">
         <p>
           Médica especializada em Saúde Mental da Mulher, com foco no acolhimento e tratamento humanizado. Atuo no cuidado integral da saúde mental feminina em todas as fases da vida.
         </p>
@@ -196,12 +216,12 @@
   <section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('capa.webp');">
     <div class="absolute inset-0 bg-[var(--roxo-terroso)]/60 backdrop-blur-[2px]"></div>
     <div class="relative z-10 text-center px-4">
-      <h3 class="font-valention text-4xl md:text-5xl text-white mb-4">Cuide da sua saúde mental</h3>
-      <p class="font-trajan text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+      <h3 class="font-aileron text-4xl md:text-5xl text-white mb-4">Cuide da sua saúde mental</h3>
+      <p class="font-aileron text-xl text-white/90 mb-8 max-w-2xl mx-auto">
         Agende sua consulta e descubra como podemos trabalhar juntas pelo seu bem-estar emocional
       </p>
       <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
-        <button class="px-8 py-4 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-xl shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)]">
+        <button class="px-8 py-4 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-xl shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)]">
           <i class="fa-brands fa-whatsapp mr-2"></i> Agende sua consulta
         </button>
       </a>
@@ -212,55 +232,82 @@
   <section class="w-full bg-[var(--rosa-antigo)]/40 py-12" id="agenda">
     <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
       <div class="flex-1">
-        <h2 class="font-herkings text-2xl md:text-3xl text-[var(--roxo-terroso)] mb-4">Quando agendar sua consulta</h2>
-        <p class="font-trajan text-base md:text-lg text-[var(--cinza-escuro)] mb-4">
-          O acompanhamento especializado é fundamental para mulheres que enfrentam desafios emocionais, mudanças hormonais, questões relacionadas à maternidade e pressões do dia a dia.
-        </p>
-        <p class="font-trajan text-base md:text-lg text-[var(--cinza-escuro)] mb-2">
-          Oferecemos um espaço seguro para seu cuidado emocional, com atendimento personalizado e tratamento adequado às suas necessidades.
-        </p>
+        <h2 class="font-aileron text-2xl md:text-3xl text-[var(--roxo-terroso)] mb-4">Cuide da sua saúde mental</h2>
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-check-circle text-[var(--verde-oliva)] mt-1"></i>
+            <p class="font-aileron text-base text-[var(--cinza-escuro)]">Atendimento especializado para mulheres</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-check-circle text-[var(--verde-oliva)] mt-1"></i>
+            <p class="font-aileron text-base text-[var(--cinza-escuro)]">Consultas online e presenciais</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-check-circle text-[var(--verde-oliva)] mt-1"></i>
+            <p class="font-aileron text-base text-[var(--cinza-escuro)]">Tratamento personalizado</p>
+          </div>
+        </div>
         <div class="mt-6">
           <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
-            <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
+            <button class="w-full sm:w-auto px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
               <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Consulta
             </button>
           </a>
         </div>
       </div>
       <div class="flex-1 flex flex-col items-center">
-        <span class="font-herkings text-xl text-[var(--roxo-terroso)] mb-3">Cuide de você:</span>
-        <span class="font-trajan text-lg mb-2 text-center">Sua saúde em primeiro lugar</span>
-        <p class="font-trajan text-base text-center mb-3">
-          Acolhimento, equilíbrio e saúde mental em cada fase da sua vida.
-        </p>
-        <img src="https://picsum.photos/seed/cuidado/220/180" class="rounded-xl border-2 border-[var(--rosa-antigo)] shadow" alt="Cuide de você">
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-[var(--rosa-antigo)]">
+          <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-3 text-center">Horários de Atendimento</h3>
+          <div class="space-y-2">
+            <p class="font-aileron text-base text-center">Segunda a Sexta: 8h às 18h</p>
+            <p class="font-aileron text-base text-center">Sábado: 8h às 12h</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- QUANDO PROCURAR -->
   <section id="quando" class="max-w-6xl mx-auto px-4 py-14">
-    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-5 text-center">Quando procurar</h2>
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      <div class="flex-1">
-        <p class="font-trajan text-lg mb-3">
-          Saiba quando buscar ajuda profissional para sua saúde mental.
-        </p>
-        <p class="font-trajan text-base mb-3">
-          O acompanhamento psiquiátrico é essencial quando você percebe mudanças significativas em seu bem-estar emocional.
-        </p>
-        <ul class="list-disc pl-5 font-trajan mb-3">
-          <li>Ansiedade e depressão: insônia, irritabilidade, cansaço, desmotivação</li>
-          <li>Gestação e puerpério: suporte emocional especializado</li>
-          <li>Alterações de humor e sobrecarga mental</li>
-        </ul>
-        <p class="font-trajan text-base">
-          Com acompanhamento adequado, você recupera seu equilíbrio e qualidade de vida.
+    <h2 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-8 text-center">Quando buscar ajuda</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-[var(--rosa-antigo)] hover:shadow-xl transition-shadow">
+        <div class="text-[var(--verde-oliva)] text-3xl mb-4">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-3">Ansiedade e Estresse</h3>
+        <p class="font-aileron text-base text-[var(--cinza-escuro)]">
+          Quando a ansiedade e o estresse afetam sua qualidade de vida e bem-estar diário.
         </p>
       </div>
-      <div class="flex-1 flex justify-center">
-        <img src="images1.webp" alt="Saúde mental" class="rounded-2xl border-2 border-[var(--rosa-antigo)] shadow-lg">
+      
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-[var(--rosa-antigo)] hover:shadow-xl transition-shadow">
+        <div class="text-[var(--verde-oliva)] text-3xl mb-4">
+          <i class="fas fa-baby"></i>
+        </div>
+        <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-3">Gestação e Puerpério</h3>
+        <p class="font-aileron text-base text-[var(--cinza-escuro)]">
+          Acompanhamento especializado durante a gestação e período pós-parto.
+        </p>
       </div>
+      
+      <div class="bg-white p-6 rounded-xl shadow-lg border border-[var(--rosa-antigo)] hover:shadow-xl transition-shadow">
+        <div class="text-[var(--verde-oliva)] text-3xl mb-4">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-3">Desequilíbrio Emocional</h3>
+        <p class="font-aileron text-base text-[var(--cinza-escuro)]">
+          Quando você percebe mudanças significativas em seu humor e bem-estar emocional.
+        </p>
+      </div>
+    </div>
+    
+    <div class="text-center mt-10">
+      <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
+        <button class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
+          <i class="fa-brands fa-whatsapp mr-2"></i> Agende sua consulta
+        </button>
+      </a>
     </div>
   </section>
 
@@ -269,8 +316,8 @@
     <div class="absolute inset-0 bg-gradient-to-r from-[var(--roxo-terroso)]/80 to-[var(--rosa-antigo)]/60 backdrop-blur-[1px]"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
       <div class="flex-1 text-white">
-        <h3 class="font-herkings text-3xl md:text-4xl mb-6">Transforme sua jornada emocional</h3>
-        <div class="font-trajan text-lg mb-8 space-y-4">
+        <h3 class="font-aileron text-3xl md:text-4xl mb-6">Transforme sua jornada emocional</h3>
+        <div class="font-aileron text-lg mb-8 space-y-4">
           <p class="leading-relaxed">
             Cada fase da vida traz desafios únicos. Não precisa enfrentá-los sozinha.
           </p>
@@ -292,18 +339,18 @@
       </div>
       <div class="flex-1 bg-white/10 backdrop-blur-md p-8 rounded-2xl border-2 border-white/20 w-full md:w-auto">
         <div class="text-center">
-          <span class="font-valention text-3xl text-white mb-4 block">Comece hoje mesmo</span>
-          <p class="font-trajan text-white/90 mb-6">
+          <span class="font-aileron text-3xl text-white mb-4 block">Comece hoje mesmo</span>
+          <p class="font-aileron text-white/90 mb-6">
             Dê o primeiro passo em direção ao seu bem-estar emocional
           </p>
           <div class="space-y-4">
             <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="block">
-              <button class="w-full px-6 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)] flex items-center justify-center">
+              <button class="w-full px-6 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-lg shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)] flex items-center justify-center">
                 <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Consulta
               </button>
             </a>
             <a href="tel:12991069893" class="block">
-              <button class="w-full px-6 py-3 rounded-full bg-transparent text-white font-herkings text-lg border-2 border-white hover:bg-white/10 transition duration-300 flex items-center justify-center">
+              <button class="w-full px-6 py-3 rounded-full bg-transparent text-white font-aileron text-lg border-2 border-white hover:bg-white/10 transition duration-300 flex items-center justify-center">
                 <i class="fa-solid fa-phone mr-2"></i> (12) 99106-9893
               </button>
             </a>
@@ -315,18 +362,18 @@
 
   <!-- FAQ -->
   <section class="max-w-6xl mx-auto px-4 py-16" id="faq">
-    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-10 text-center">FAQ</h2>
-    <h3 class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-6 text-center">Perguntas Frequentes</h3>
+    <h2 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-10 text-center">FAQ</h2>
+    <h3 class="font-aileron text-2xl text-[var(--roxo-terroso)] mb-6 text-center">Perguntas Frequentes</h3>
     
     <div class="max-w-4xl mx-auto space-y-4">
       <!-- FAQ Item 1 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">Quanto tempo dura a consulta?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">Quanto tempo dura a consulta?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             A primeira consulta tem duração de 1 hora. As consultas de retorno duram em média 30 minutos.
           </p>
         </div>
@@ -335,11 +382,11 @@
       <!-- FAQ Item 2 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">Preciso de encaminhamento para marcar consulta?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">Preciso de encaminhamento para marcar consulta?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             Não é necessário encaminhamento. Você pode agendar diretamente pelo WhatsApp.
           </p>
         </div>
@@ -348,11 +395,11 @@
       <!-- FAQ Item 3 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">Qual é a idade mínima para consultar?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">Qual é a idade mínima para consultar?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             Atendo pacientes a partir dos 18 anos de idade.
           </p>
         </div>
@@ -361,11 +408,11 @@
       <!-- FAQ Item 4 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">A consulta online é segura?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">A consulta online é segura?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             Sim, a teleconsulta é regulamentada pelo CFM e oferece a mesma qualidade do atendimento presencial.
           </p>
         </div>
@@ -374,11 +421,11 @@
       <!-- FAQ Item 5 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">Na consulta online são prescritos medicamentos?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">Na consulta online são prescritos medicamentos?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             Sim, quando necessário, a prescrição é enviada digitalmente com assinatura eletrônica.
           </p>
         </div>
@@ -387,11 +434,11 @@
       <!-- FAQ Item 6 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">São aceitos convênios?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">São aceitos convênios?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             No momento, atendo apenas consultas particulares.
           </p>
         </div>
@@ -400,11 +447,11 @@
       <!-- FAQ Item 7 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
-          <span class="font-herkings text-lg text-[var(--roxo-terroso)]">Qual o horário de funcionamento?</span>
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">Qual o horário de funcionamento?</span>
           <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
         </button>
         <div class="hidden px-6 py-4 bg-white">
-          <p class="font-trajan text-[var(--cinza-escuro)]">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
             Atendo de segunda a sexta, das 8h às 18h. Agendamentos pelo WhatsApp.
           </p>
         </div>
@@ -415,92 +462,92 @@
   <!-- ATENDIMENTOS (DINÂMICO, SLIDER, CARDS INTERATIVOS) -->
   <section id="atendimentos" class="w-full bg-[var(--rosa-antigo)]/40 py-16">
     <div class="max-w-6xl mx-auto px-4">
-      <h3 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-10 text-center">Principais Atendimentos</h3>
+      <h3 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-10 text-center">Principais Atendimentos</h3>
       <div id="servicos-slider" class="flex gap-7 overflow-x-auto pb-3 snap-x snap-mandatory">
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-laptop-medical text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Teleconsulta</div>
+          <div class="font-aileron text-xl mb-2">Teleconsulta</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Atendimento remoto em Saúde Mental, acesso especializado sem deslocamento.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-baby text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Acompanhamento durante a gestação</div>
+          <div class="font-aileron text-xl mb-2">Acompanhamento durante a gestação</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Suporte à saúde mental da gestante e bem-estar do bebê.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-venus text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Saúde mental perinatal</div>
+          <div class="font-aileron text-xl mb-2">Saúde mental perinatal</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Cuidado durante gestação e puerpério, prevenção e tratamento.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-user-nurse text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Tratamento pós-parto</div>
+          <div class="font-aileron text-xl mb-2">Tratamento pós-parto</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Abordagem de depressão, ansiedade e psicose puerperal.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-head-side-virus text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Depressão gestacional</div>
+          <div class="font-aileron text-xl mb-2">Depressão gestacional</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Tratamento medicamentoso e/ou psicoterapêutico durante a gravidez.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-baby-carriage text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Transtornos mentais no puerpério</div>
+          <div class="font-aileron text-xl mb-2">Transtornos mentais no puerpério</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Manejo seguro de depressão pós-parto, ansiedade, bipolaridade.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-stethoscope text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Transtornos período periconcepcional</div>
+          <div class="font-aileron text-xl mb-2">Transtornos período periconcepcional</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Cuidados antes e após a concepção, ajustes no tratamento.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-pregnant-woman text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Transtornos mentais na gravidez</div>
+          <div class="font-aileron text-xl mb-2">Transtornos mentais na gravidez</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Manejo de depressão, ansiedade e bipolaridade na gestação.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-heart text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Depressão pós-parto</div>
+          <div class="font-aileron text-xl mb-2">Depressão pós-parto</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Abordagem psicoterapêutica e, se necessário, psicofármacos.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-female text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Saúde mental da mulher</div>
+          <div class="font-aileron text-xl mb-2">Saúde mental da mulher</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Prevenção, diagnóstico e tratamento de transtornos mentais femininos.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-file-medical text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Atestado de sanidade mental</div>
+          <div class="font-aileron text-xl mb-2">Atestado de sanidade mental</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Documento que atesta a capacidade mental para atividades específicas.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-notes-medical text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Laudo médico</div>
+          <div class="font-aileron text-xl mb-2">Laudo médico</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Relatório técnico detalhado para perícias e processos jurídicos.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-user-md text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Consultoria para gestantes</div>
+          <div class="font-aileron text-xl mb-2">Consultoria para gestantes</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Ajuste de psicofármacos para gestação, parto e amamentação.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-hands-helping text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Interconsulta de Saúde Mental</div>
+          <div class="font-aileron text-xl mb-2">Interconsulta de Saúde Mental</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Apoio a outras especialidades médicas no manejo de transtornos.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-ambulance text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Consulta de Saúde Mental Urgente</div>
+          <div class="font-aileron text-xl mb-2">Consulta de Saúde Mental Urgente</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Atendimento imediato para quadros agudos, crises e encaminhamentos.</div>
         </div>
         <div class="servico-card snap-center min-w-[270px] max-w-sm bg-[var(--rosa-antigo)] rounded-2xl p-8 shadow-lg flex flex-col items-center mx-2 hover:bg-white">
           <i class="fa-solid fa-baby text-4xl text-[var(--roxo-terroso)] mb-4"></i>
-          <div class="font-herkings text-xl mb-2">Acompanhamento gestacional e puperperal</div>
+          <div class="font-aileron text-xl mb-2">Acompanhamento gestacional e puperperal</div>
           <div class="text-[var(--cinza-escuro)] text-base text-center">Cuidado integral de saúde mental, gestação e pós-parto.</div>
         </div>
       </div>
       <div class="flex justify-center mt-8">
         <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank">
-          <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg transition duration-200 hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
+          <button class="px-7 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-lg shadow-lg transition duration-200 hover:bg-[var(--roxo-terroso)] hover:text-white border-2 border-[var(--verde-oliva)]">
             <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Consulta
           </button>
         </a>
@@ -510,16 +557,16 @@
 
   <!-- CURRÍCULO -->
   <section class="max-w-5xl mx-auto px-4 py-16" id="curriculo">
-    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-6 text-center">Currículo</h2>
+    <h2 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-6 text-center">Currículo</h2>
     <div class="flex flex-col md:flex-row gap-10">
       <div class="flex-1">
-        <h3 class="font-herkings text-xl text-[var(--roxo-terroso)] mb-2">Formação Acadêmica</h3>
-        <ul class="font-trajan text-base mb-4">
+        <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-2">Formação Acadêmica</h3>
+        <ul class="font-aileron text-base mb-4">
           <li>• Medicina – Faculdade Ciências Médicas de São José dos Campos (2017-2023)</li>
           <li>• Pós-graduação em Psiquiatria – Santa Casa de São Paulo (2024 – atual)</li>
         </ul>
-        <h3 class="font-herkings text-xl text-[var(--roxo-terroso)] mb-2">Experiência Profissional</h3>
-        <ul class="font-trajan text-base">
+        <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-2">Experiência Profissional</h3>
+        <ul class="font-aileron text-base">
           <li>• Atendimento em Urgência e Emergência Psiquiátrica – Hospital Francisca Júlia / CVV (2023 – atual)</li>
           <li>• Ambulatório de Saúde Mental Feminina – (2024 – atual)</li>
         </ul>
@@ -533,19 +580,19 @@
   <!-- CONTATO -->
   <section class="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-10" id="contato">
     <div class="flex-1">
-      <h3 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-4">Contato</h3>
-      <div class="font-trajan text-lg mb-2">
-        <span class="font-herkings text-base text-[var(--roxo-terroso)]">Endereço:</span> <br>
+      <h3 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-4">Contato</h3>
+      <div class="font-aileron text-lg mb-2">
+        <span class="font-aileron text-base text-[var(--roxo-terroso)]">Endereço:</span> <br>
         Clínica Helbor Escritórios Jardim Das Colinas <br>
         Av. São João, 2375 – Andar 11 – Sala 1106 <br>
         Jardim Aquarius, São José dos Campos – SP, 12242-000 <br>
-        <span class="font-herkings text-base text-[var(--roxo-terroso)]">Telefone:</span> <a href="tel:12991069893" class="underline hover:text-[var(--roxo-terroso)]">(12) 99106-9893</a>
+        <span class="font-aileron text-base text-[var(--roxo-terroso)]">Telefone:</span> <a href="tel:12991069893" class="underline hover:text-[var(--roxo-terroso)]">(12) 99106-9893</a>
       </div>
       <form id="contact-form" class="flex flex-col gap-4 mt-4">
-        <input type="text" required name="nome" placeholder="Nome" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
-        <input type="email" required name="email" placeholder="E-mail" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
-        <textarea required name="mensagem" rows="4" placeholder="Mensagem" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-trajan focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]"></textarea>
-        <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white transition border-2 border-[var(--verde-oliva)]">
+        <input type="text" required name="nome" placeholder="Nome" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-aileron focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
+        <input type="email" required name="email" placeholder="E-mail" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-aileron focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]" autocomplete="off">
+        <textarea required name="mensagem" rows="4" placeholder="Mensagem" class="rounded-lg px-4 py-3 bg-[var(--rosa-antigo)] border border-[var(--roxo-terroso)] text-[var(--cinza-escuro)] font-aileron focus:outline-none focus:ring-2 focus:ring-[var(--roxo-terroso)]"></textarea>
+        <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-lg shadow-lg hover:bg-[var(--roxo-terroso)] hover:text-white transition border-2 border-[var(--verde-oliva)]">
           <i class="fab fa-whatsapp mr-1"></i> Enviar para WhatsApp
         </button>
       </form>
@@ -553,7 +600,7 @@
     <div class="flex-1 flex flex-col items-center justify-center">
       <iframe title="Mapa da clínica" class="w-full h-72 rounded-2xl shadow-lg border-2 border-[var(--rosa-antigo)]" loading="lazy"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.0097942169644!2d-45.90699492529656!3d-23.20990644886799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4a7e4d7e3f45%3A0x546c5d2130e2fdb8!2sAv.%20S%C3%A3o%20Jo%C3%A3o%2C%202375%20-%20Jardim%20das%20Colinas%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012242-000!5e0!3m2!1spt-BR!2sbr!4v1710284611387!5m2!1spt-BR!2sbr"></iframe>
-      <div class="mt-3 font-trajan text-base text-[var(--cinza-escuro)] text-center">
+      <div class="mt-3 font-aileron text-base text-[var(--cinza-escuro)] text-center">
         Av. São João, 2375 – Andar 11 – Sala 1106<br>
         Jardim Aquarius, São José dos Campos – SP, 12242-000
       </div>
@@ -562,19 +609,19 @@
 
   <!-- BLOG -->
   <section class="max-w-6xl mx-auto px-4 py-16 bg-[var(--rosa-antigo)]/10" id="blog">
-    <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-8 text-center">Blog</h2>
+    <h2 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-8 text-center">Blog</h2>
     <div class="max-w-4xl mx-auto">
       <div class="grid gap-8">
         <article class="bg-white rounded-2xl p-8 shadow-lg transition-transform hover:transform hover:scale-[1.02]">
           <div class="flex flex-col">
-            <h3 class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-3">Saúde Mental Feminina: Um Olhar Especializado</h3>
-            <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">24 de abril de 2024</div>
-            <p class="font-trajan text-base text-[var(--cinza-escuro)] mb-6 leading-relaxed">
+            <h3 class="font-aileron text-2xl text-[var(--roxo-terroso)] mb-3">Saúde Mental Feminina: Um Olhar Especializado</h3>
+            <div class="font-aileron text-sm text-[var(--cinza-escuro)]/70 mb-4">24 de abril de 2024</div>
+            <p class="font-aileron text-base text-[var(--cinza-escuro)] mb-6 leading-relaxed">
               Em breve, compartilharei aqui conteúdos relevantes sobre saúde mental feminina, abordando temas como ansiedade, 
               depressão, maternidade e os desafios únicos que nós, mulheres, enfrentamos em diferentes fases da vida.
             </p>
             <div class="flex justify-end">
-              <button disabled class="px-6 py-2 rounded-full bg-[var(--roxo-terroso)]/10 text-[var(--roxo-terroso)] font-herkings text-base border border-[var(--roxo-terroso)]/20 cursor-not-allowed transition">
+              <button disabled class="px-6 py-2 rounded-full bg-[var(--roxo-terroso)]/10 text-[var(--roxo-terroso)] font-aileron text-base border border-[var(--roxo-terroso)]/20 cursor-not-allowed transition">
                 Em breve
               </button>
             </div>
@@ -582,10 +629,10 @@
         </article>
 
         <div class="text-center">
-          <p class="font-trajan text-lg text-[var(--cinza-escuro)] mb-4">
+          <p class="font-aileron text-lg text-[var(--cinza-escuro)] mb-4">
             Fique atenta! Em breve, compartilharei conteúdos exclusivos sobre saúde mental feminina.
           </p>
-          <button disabled class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-[var(--roxo-terroso)] font-herkings text-lg border border-[var(--verde-oliva)] cursor-not-allowed transition">
+          <button disabled class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-[var()] font-aileron text-lg border border-[var(--verde-oliva)] cursor-not-allowed transition">
             Mais artigos em breve
           </button>
         </div>
@@ -596,12 +643,12 @@
   <!-- INSTAGRAM FEED -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
-      <h2 class="font-herkings text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-4">Siga no Instagram</h2>
-      <p class="font-trajan text-lg text-[var(--cinza-escuro)] max-w-2xl mx-auto">
+      <h2 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-4">Siga no Instagram</h2>
+      <p class="font-aileron text-lg text-[var(--cinza-escuro)] max-w-2xl mx-auto">
         Acompanhe conteúdos exclusivos sobre saúde mental feminina e fique por dentro das novidades
       </p>
       <a href="https://instagram.com/" target="_blank" class="inline-block mt-4 text-[var(--roxo-terroso)] hover:text-[var(--rosa-antigo)] transition-colors">
-        <span class="font-trajan">@dracamilamozart</span>
+        <span class="font-aileron">@dracamilamozart</span>
         <i class="fab fa-instagram ml-2"></i>
       </a>
     </div>
@@ -612,7 +659,7 @@
         <img src="insta1.webp" alt="Post do Instagram - Dra Camila Mozart - Saúde Mental Feminina" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
         <div class="absolute inset-0 bg-gradient-to-t from-[var(--roxo-terroso)]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
           <div class="text-white">
-            <p class="font-trajan text-sm mb-3">
+            <p class="font-aileron text-sm mb-3">
               Você sabia que a saúde mental é tão importante quanto a saúde física? 🧠✨ Cuide do seu bem-estar emocional e descubra como podemos te ajudar nessa jornada. #SaudeMentalFeminina #BemEstarEmocional #DraCamilaMozart
             </p>
             <div class="flex items-center gap-4">
@@ -631,9 +678,9 @@
           <div class="text-white">
             <div class="flex items-center mb-3">
               <img src="camila.webp" alt="Dra Camila Mozart" class="w-10 h-10 rounded-full border-2 border-white mr-3">
-              <span class="font-herkings">@dracamilamozart</span>
+              <span class="font-aileron">@dracamilamozart</span>
             </div>
-            <p class="font-trajan text-sm mb-3">
+            <p class="font-aileron text-sm mb-3">
               Ansiedade na gestação? Vamos conversar sobre isso! Entenda como cuidar da sua saúde mental nesse momento especial. 🤰 #GestacaoSaudavel
             </p>
             <div class="flex items-center gap-4">
@@ -652,9 +699,9 @@
           <div class="text-white">
             <div class="flex items-center mb-3">
               <img src="camila.webp" alt="Dra Camila Mozart" class="w-10 h-10 rounded-full border-2 border-white mr-3">
-              <span class="font-herkings">@dracamilamozart</span>
+              <span class="font-aileron">@dracamilamozart</span>
             </div>
-            <p class="font-trajan text-sm mb-3">
+            <p class="font-aileron text-sm mb-3">
               Autocuidado não é egoísmo! Aprenda a priorizar sua saúde mental e viva com mais leveza. ✨ #Autocuidado #SaudeMentalFeminina
             </p>
             <div class="flex items-center gap-4">
@@ -669,7 +716,7 @@
 
     <div class="text-center mt-10">
       <a href="https://instagram.com/" target="_blank">
-        <button class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-herkings text-lg shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)]">
+        <button class="px-8 py-3 rounded-full bg-[var(--verde-oliva)] text-white font-aileron text-lg shadow-lg hover:bg-[var(--roxo-terroso)] transition duration-300 border-2 border-[var(--verde-oliva)]">
           <i class="fab fa-instagram mr-2"></i> Ver mais no Instagram
         </button>
       </a>
@@ -677,7 +724,7 @@
   </section>
 
   <!-- RODAPÉ -->
-  <footer class="bg-[var(--cinza-escuro)] text-[var(--off-white)] font-trajan text-base py-8">
+  <footer class="bg-[var(--cinza-escuro)] text-[var(--off-white)] font-aileron text-base py-8">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex flex-col items-center md:items-start">
         <img src="https://picsum.photos/seed/logofooter/54/54" alt="Logo Dra. Camila Mozart" class="mb-2 rounded-full border-2 border-[var(--rosa-antigo)]">

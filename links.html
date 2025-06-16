@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Dra. Camila Mozart | Links Essenciais</title>
+  <meta name="description" content="Todos os links importantes da Dra. Camila Mozart: Website, App, WhatsApp, Instagram, Blog e Localização.">
+  <meta name="keywords" content="Dra Camila Mozart, links, linktree, website, app, whatsapp, instagram, blog, localização">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.cdnfonts.com/css/hello-august" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/685/685655.png">
+  <style>
+    :root {
+      --verde-suave: #BAC4BC;
+      --off-white: #EAECE9;
+      --rosa-antigo: #DBC8C2;
+      --cinza-escuro: #666666;
+      --verde-oliva: #818B54;
+      --roxo-terroso: #7C5B66;
+    }
+    .font-hello-august { 
+      font-family: 'Hello August', cursive;
+    }
+    .font-aileron { 
+      font-family: 'Aileron', sans-serif;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image: url('https://www.transparenttextures.com/patterns/symphony.png');
+    }
+    body {
+      background: var(--off-white);
+      position: relative;
+      min-height: 100vh;
+      font-family: 'Aileron', sans-serif;
+      color: var(--cinza-escuro);
+      scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar { width: 10px; background: var(--off-white);}
+    ::-webkit-scrollbar-thumb { background: var(--cinza-escuro); border-radius: 7px;}
+
+    #whatsapp-float {
+      position: fixed;
+      bottom: 2.2rem;
+      right: 1.5rem;
+      z-index: 40;
+      background: var(--verde-oliva);
+      color: #fff;
+      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 25px 0 rgba(124,91,102,0.19);
+      font-size: 2rem;
+      cursor: pointer;
+      border: 5px solid var(--rosa-antigo);
+      animation: floatpulse 2.5s infinite;
+      transition: background 0.3s, color 0.3s;
+    }
+    #whatsapp-float:hover { background: var(--rosa-antigo); color: var(--roxo-terroso);}
+    @keyframes floatpulse {
+      0%,100% { box-shadow: 0 6px 25px 0 rgba(124,91,102,0.18);}
+      50% { box-shadow: 0 6px 35px 0 rgba(124,91,102,0.27);}
+    }
+    .servico-card {
+      transition: transform .2s, box-shadow .2s;
+      cursor:pointer;
+      position:relative;
+      overflow: hidden;
+    }
+    .servico-card:hover {
+      transform: translateY(-7px) scale(1.03);
+      box-shadow: 0 12px 40px 0 rgba(124,91,102,0.19);
+      z-index:2;
+    }
+    .servico-card:after {
+      content:'';
+      position:absolute;
+      top:0;left:0;width:100%;height:100%;
+      background:linear-gradient(120deg,rgba(124,91,102,0.07) 0%,rgba(219,200,194,0.07) 100%);
+      pointer-events:none;
+      z-index:1;
+    }
+    .navlink {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .navlink:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--roxo-terroso);
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      border-radius: 2px;
+    }
+    .navlink:hover:after { width: 100%; }
+    .navlink:hover { color: var(--roxo-terroso);}
+    @media (max-width: 640px) {
+      #popup-agenda { 
+        max-width: 95vw;
+        width: 95vw;
+        margin: 0 auto;
+      }
+      #whatsapp-float {width:56px; height:56px; font-size:1.5rem;}
+    }
+
+    /* Custom styles for links.html buttons based on provided reference */
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center text and icon for all buttons */
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0.75rem; /* More rounded corners for softer look */
+      background-color: var(--verde-oliva);
+      color: white; /* Text color for general buttons */
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Softer shadow for lighter theme */
+    }
+    .link-button:hover {
+      background-color: #6a743a; /* Darker verde-oliva */
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .link-button i {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+    }
+    .accent-button {
+      background-color: var(--rosa-antigo);
+    }
+    .accent-button:hover {
+      background-color: #c4b6b1; /* Darker rosa-antigo */
+    }
+    .accent-button i {
+      color: white;
+    }
+
+    /* Adjustments for profile text color to match the light background */
+    .profile-title {
+      color: var(--roxo-terroso); /* Use a darker color for text on light background */
+    }
+    .profile-subtitle {
+      color: var(--cinza-escuro); /* Darker gray for subtitle */
+    }
+
+    /* Mobile responsiveness adjustments */
+    @media (max-width: 768px) {
+      .profile-title {
+        font-size: 3rem; /* Adjust font size for mobile */
+      }
+      .profile-subtitle {
+        font-size: 1.3rem;
+      }
+      .link-button {
+        padding: 1rem 1rem; /* Slightly smaller padding on mobile */
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body class="relative">
+ 
+  
+
+  <!-- HERO -->
+  <section id="inicio" class="relative w-full min-h-[95vh] md:min-h-[95vh] min-h-screen flex flex-col justify-center overflow-hidden bg-[#E8E1D8] pt-16 md:pt-20">
+    <!-- Background image container for mobile -->
+    <div class="absolute inset-0 md:hidden">
+      <img src="capa1.jpg" alt="Dra. Camila Mozart" class="w-full h-full object-cover opacity-30">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#E8E1D8]/30"></div>
+    </div>
+    
+    <!-- Texture overlay -->
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall-3.png')] opacity-30"></div>
+    
+    <!-- Content Container -->
+    <div class="container mx-auto px-4 lg:px-8 flex flex-col h-full md:flex-row md:items-center relative z-10 justify-center items-center">
+      <!-- Left Content (text and buttons) -->
+      <div class="w-full lg:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-20 pb-12 md:pb-0">
+        <!-- Logo/Profile Section -->
+        <div class="mb-8 md:mb-12">
+          <h1 class="font-hello-august text-5xl md:text-6xl leading-tight profile-title">Dra. Camila Mozart</h1>
+          <p class="font-aileron text-xl md:text-2xl mt-2 profile-subtitle">Saúde Mental da Mulher</p>
+        </div>
+
+        <!-- Links Container -->
+        <div class="w-full max-w-sm space-y-4">
+          <!-- Main Website -->
+          <a href="index.html" class="link-button">
+            <i class="fas fa-globe mr-3"></i>
+            Website
+          </a>
+
+          <!-- App Download (App Store) -->
+          <a href="https://apps.apple.com/br/app/dra-camila-mozart/id6744363617" target="_blank" class="link-button accent-button">
+            <i class="fab fa-apple mr-3"></i>
+            Download na App Store
+          </a>
+          <!-- App Download (Google Play) -->
+          <a href="https://play.google.com/store/apps/details?id=br.com.camilamozart.app" target="_blank" class="link-button accent-button">
+            <i class="fab fa-google-play mr-3"></i>
+            Download no Google Play
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21" target="_blank" class="link-button">
+            <i class="fab fa-whatsapp mr-3"></i>
+            Agendar Consulta
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/dracamilamozart" target="_blank" class="link-button">
+            <i class="fab fa-instagram mr-3"></i>
+            Instagram
+          </a>
+
+          <!-- Blog -->
+          <a href="blog.html" class="link-button">
+            <i class="fas fa-blog mr-3"></i>
+            Blog
+          </a>
+
+          <!-- Location -->
+          <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.0097942169644!2d-45.90699492529656!3d-23.20990644886799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4a7e4d7e3f45%3A0x546c5d2130e2fdb8!2sAv.%20S%C3%A3o%20Jo%C3%A3o%2C%202375%20-%20Jardim%20das%20Colinas%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012242-000!5e0!3m2!1spt-BR!2sbr!4v1710284611387!5m2!1spt-BR!2sbr" target="_blank" class="link-button">
+            <i class="fas fa-map-marker-alt mr-3"></i>
+            Localização
+          </a>
+        </div>
+      </div>
+    
+      <!-- Right Image (desktop only) -->
+      <div class="w-full lg:w-1/2 relative hidden md:block">
+        <img src="capa1.jpg" alt="Dra. Camila Mozart" class="w-full h-auto max-h-[800px] object-cover rounded-lg shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full text-center py-8 text-gray-500 text-sm">
+    <p>Dra. Camila Mozart - CRM 246686</p>
+    <p class="mt-1">© 2024 Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Note: The following scripts are from the base code you provided and are typically for a full website.
+    // They are kept here as per the instruction to work with the "current code", but might be removed for a simpler linktree.
+
+    // Botão flutuante WhatsApp - Removed if not relevant to a static linktree
+    // Formulário redireciona para WhatsApp com mensagem formatada - Removed if not relevant
+    // FAQ Toggle - Removed if not relevant
+    // Carousel functionality - Removed if not relevant
+
+    // Removing specific element-dependent scripts if elements are not present
+    const whatsappFloat = document.getElementById('whatsapp-float');
+    if (whatsappFloat) {
+      whatsappFloat.onclick = function() {
+        window.open('https://wa.me/5512991069893?text=Olá%2C+gostaria+de+agendar+uma+consulta%21', '_blank');
+      };
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.onsubmit = function(e) {
+        e.preventDefault();
+        const nome = encodeURIComponent(this.nome.value);
+        const email = encodeURIComponent(this.email.value);
+        const mensagem = encodeURIComponent(this.mensagem.value);
+        const text = `Olá Dra. Camila!%0A%0ANome: ${nome}%0AE-mail: ${email}%0AMensagem: ${mensagem}`;
+        window.open('https://wa.me/5512991069893?text=' + text, '_blank');
+        return false;
+      };
+    }
+
+    document.querySelectorAll('#faq button').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        content.classList.toggle('hidden');
+        
+        if (content.classList.contains('hidden')) {
+          icon.classList.remove('fa-minus');
+          icon.classList.add('fa-plus');
+        } else {
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        }
+        
+        document.querySelectorAll('#faq button').forEach(otherButton => {
+          if (otherButton !== button) {
+            const otherContent = otherButton.nextElementSibling;
+            const otherIcon = otherButton.querySelector('i');
+            otherContent.classList.add('hidden');
+            otherIcon.classList.remove('fa-minus');
+            otherIcon.classList.add('fa-plus');
+          }
+        });
+      });
+    });
+
+    const carousel = document.querySelector('.carousel-track');
+    if (carousel) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.carousel-dots button');
+      const prevButton = document.querySelector('.carousel-prev');
+      const nextButton = document.querySelector('.carousel-next');
+      let currentSlide = 0;
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('bg-white', index === currentSlide);
+          dot.classList.toggle('bg-white/50', index !== currentSlide);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+      }
+
+      if (nextButton) nextButton.addEventListener('click', nextSlide);
+      if (prevButton) prevButton.addEventListener('click', prevSlide);
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          updateCarousel();
+        });
+      });
+
+      setInterval(nextSlide, 5000);
+    }
+  </script>
+</body>
+</html>

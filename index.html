@@ -47,6 +47,18 @@
     ::-webkit-scrollbar { width: 10px; background: var(--off-white);}
     ::-webkit-scrollbar-thumb { background: var(--cinza-escuro); border-radius: 7px;}
 
+    /* Media query para dispositivos móveis */
+    @media (max-width: 768px) {
+      .parallax-section {
+        background-image: none !important;
+        background-color: var(--roxo-terroso) !important;
+      }
+      .parallax-section > div:first-child,
+      .parallax-section > div:nth-child(2) {
+        display: none;
+      }
+    }
+
     #whatsapp-float {
       position: fixed;
       bottom: 2.2rem;
@@ -124,7 +136,7 @@
   <header class="fixed top-0 left-0 w-full z-50 bg-[var(--off-white)]/95 backdrop-blur-md shadow-md">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
       <a href="#inicio" class="flex items-center">
-        <span class="font-hello-august text-xl tracking-widest text-[var(--roxo-terroso)]">Dra. Camila Mozart</span>
+        <span class="font-hello-august font-bold text-xl tracking-widest text-[var(--roxo-terroso)]">Dra. Camila Mozart</span>
       </a>
       <nav class="hidden md:flex gap-7 text-base font-aileron">
         <a class="navlink" href="#inicio">Início</a>
@@ -157,11 +169,11 @@
     <div class="container mx-auto px-4 lg:px-8 flex flex-col h-full md:flex-row md:items-center relative z-10 justify-end pb-12">
       <!-- Left Content (text and buttons) -->
       <div class="w-full lg:w-1/2 relative z-20 lg:pr-12 mb-12 lg:mb-0 flex flex-col items-center text-center md:items-start md:text-left justify-end">
-        <h1 class="font-hello-august text-4xl lg:text-5xl xl:text-6xl text-[var(--cinza-escuro)] mb-4">
+        <h1 class="font-hello-august  font-bold text-4xl lg:text-5xl xl:text-6xl text-[var(--cinza-escuro)] mb-4">
           Dra. Camila Mozart
         </h1>
         <h2 class="font-aileron text-lg md:text-2xl text-[var(--cinza-escuro)] mb-3">
-          Saúde Mental da Mulher
+          Saúde Mental Feminina
         </h2>
         <div class="w-16 h-0.5 bg-[var(--verde-oliva)] mb-6 md:mx-0 mx-auto"></div>
         
@@ -204,18 +216,19 @@
       <h3 class="font-aileron text-3xl md:text-4xl text-[var(--roxo-terroso)] mb-5">Conheça a Dra. Camila Mozart</h3>
       <div class="font-aileron text-lg md:text-xl text-[var(--cinza-escuro)] leading-relaxed">
         <p>
-          Médica especializada em Saúde Mental da Mulher, com foco no acolhimento e tratamento humanizado. Atuo no cuidado integral da saúde mental feminina em todas as fases da vida.
+          Médica especializada em Saúde Mental feminina, com foco no acolhimento e tratamento humanizado. Atuo no cuidado integral da saúde mental em todas as fases da vida.
         </p>
         <p class="mt-3">
-          Ofereço atendimento personalizado para auxiliar cada mulher em seus desafios emocionais, promovendo equilíbrio e qualidade de vida.
+          Ofereço atendimento personalizado para auxiliar cada paciente em seus desafios emocionais, promovendo equilíbrio e qualidade de vida.
         </p>
       </div>
     </div>
   </section>
 
   <!-- PARALLAX CTA -->
-  <section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('capa.webp');">
-    <div class="absolute inset-0 bg-[var(--roxo-terroso)]/60 backdrop-blur-[2px]"></div>
+  <section class="relative h-[400px] w-full flex items-center justify-center overflow-hidden parallax-section" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('capa.webp');">
+    <div class="absolute inset-0 bg-[var(--roxo-terroso)]/90 backdrop-blur-[8px] mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-[var(--roxo-terroso)]/40"></div>
     <div class="relative z-10 text-center px-4">
       <h3 class="font-aileron text-4xl md:text-5xl text-white mb-4">Cuide da sua saúde mental</h3>
       <p class="font-aileron text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -258,7 +271,7 @@
       </div>
       <div class="flex-1 flex flex-col items-center">
         <div class="bg-white p-6 rounded-xl shadow-lg border border-[var(--rosa-antigo)]">
-          <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-3 text-center">Horários de Atendimento</h3>
+          <h3 class="font-aileron text-xl text-[var(--roxo-terroso)] mb-3 text-center">Horários de Agendamento</h3>
           <div class="space-y-2">
             <p class="font-aileron text-base text-center">Segunda a Sexta: 8h às 18h</p>
             <p class="font-aileron text-base text-center">Sábado: 8h às 12h</p>
@@ -313,14 +326,15 @@
   </section>
 
   <!-- PARALLAX CTA 2 -->
-  <section class="relative min-h-[600px] md:h-[500px] w-full flex items-center justify-center overflow-hidden py-12 md:py-0" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');">
-    <div class="absolute inset-0 bg-gradient-to-r from-[var(--roxo-terroso)]/80 to-[var(--rosa-antigo)]/60 backdrop-blur-[1px]"></div>
+  <section class="relative min-h-[600px] md:h-[500px] w-full flex items-center justify-center overflow-hidden py-12 md:py-0 parallax-section" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-[var(--roxo-terroso)]/90 backdrop-blur-[8px] mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-[var(--roxo-terroso)]/40"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
       <div class="flex-1 text-white">
         <h3 class="font-aileron text-3xl md:text-4xl mb-6">Transforme sua jornada emocional</h3>
         <div class="font-aileron text-lg mb-8 space-y-4">
           <p class="leading-relaxed">
-            Cada fase da vida traz desafios únicos. Não precisa enfrentá-los sozinha.
+            Cada fase da vida traz desafios únicos. Você não precisa enfrentá-los sozinha.
           </p>
           <ul class="space-y-2">
             <li class="flex items-center">
@@ -375,11 +389,22 @@
         </button>
         <div class="hidden px-6 py-4 bg-white">
           <p class="font-aileron text-[var(--cinza-escuro)]">
-            A primeira consulta tem duração de 1 hora. As consultas de retorno duram em média 30 minutos.
+            A primeira consulta tem duração de 1 hora e 30 minutos. As consultas de retorno duram em média 1 hora.
           </p>
         </div>
       </div>
 
+      <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
+        <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
+          <span class="font-aileron text-lg text-[var(--roxo-terroso)]">Quando faço retorno na Dra ?</span>
+          <i class="fas fa-plus text-[var(--roxo-terroso)]"></i>
+        </button>
+        <div class="hidden px-6 py-4 bg-white">
+          <p class="font-aileron text-[var(--cinza-escuro)]">
+            Não trabalhamos com retornos. Em media cada consulta tem o intervalo de 2 a 3 meses.
+          </p>
+        </div>
+      </div>
       <!-- FAQ Item 2 -->
       <div class="border border-[var(--rosa-antigo)] rounded-lg overflow-hidden">
         <button class="w-full px-6 py-4 text-left bg-[var(--rosa-antigo)]/20 hover:bg-[var(--rosa-antigo)]/30 transition-colors flex justify-between items-center">
@@ -453,7 +478,8 @@
         </button>
         <div class="hidden px-6 py-4 bg-white">
           <p class="font-aileron text-[var(--cinza-escuro)]">
-            Atendo de segunda a sexta, das 8h às 18h. Agendamentos pelo WhatsApp.
+            Agendamentos de segunda a sexta, das 8h às 18h. Agendamentos pelo WhatsApp.
+            Atendimentos em horarios flexiveis, até 22 horas e finais de semana.
           </p>
         </div>
       </div>

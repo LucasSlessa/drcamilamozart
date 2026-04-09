@@ -12,10 +12,14 @@
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/685/685655.png">
   <style>
     :root {
+      --verde-suave: #BAC4BC;
       --verde-acinzentado: #f8f8f8;
-      --cinza-escuro: #666666;
+      --off-white: #EAECE9;
       --rosa-claro: #DBC8C2;
-      --roxo-terroso: #7C5866;
+      --rosa-antigo: #DBC8C2;
+      --cinza-escuro: #666666;
+      --verde-oliva: #818B54;
+      --roxo-terroso: #7C5B66;
     }
     .font-valention { font-family: 'Great Vibes', cursive; }
     .font-herkings { font-family: 'Playfair Display', serif; }
@@ -47,42 +51,52 @@
       
       <div class="grid gap-12">
         <!-- Article 1 -->
-        <article class="bg-white rounded-2xl p-8 shadow-lg">
-          <h2 class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-3">Saúde Mental na Gestação: Um Guia Completo</h2>
-          <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">24 de abril de 2024</div>
+        <article class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-[var(--rosa-claro)]">
+          <h2 class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-3">Medicamentos psiquiátricos engordam? O que a mulher precisa saber antes de se tratar.</h2>
+          <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">Atualizado recentemente - Temática: Medicações e Metabolismo</div>
           <div class="prose font-trajan text-[var(--cinza-escuro)]">
             <p class="mb-4">
-              A gestação é um período de intensas transformações físicas e emocionais. Neste artigo, abordaremos como cuidar da saúde mental durante esta fase tão especial da vida.
+              O medo do ganho de peso é a objeção número um que impede milhões de mulheres de tratarem a depressão e a ansiedade profunda. Entenda como as escolhas e vias farmacológicas modernas funcionam de verdade.
             </p>
-            <p class="mb-4">Em breve, compartilharei informações valiosas sobre:</p>
-            <ul class="list-disc pl-5 mb-4">
-              <li>Mudanças emocionais comuns na gestação</li>
-              <li>Sinais de alerta para depressão gestacional</li>
-              <li>Estratégias de autocuidado</li>
-              <li>Quando buscar ajuda profissional</li>
-            </ul>
           </div>
           <div class="mt-6 flex justify-end">
-            <button disabled class="px-6 py-2 rounded-full bg-[var(--roxo-terroso)]/10 text-[var(--roxo-terroso)] font-herkings text-base border border-[var(--roxo-terroso)]/20 cursor-not-allowed">
-              Artigo em breve
-            </button>
+            <a href="artigo-medicamentos-engordam.html">
+              <button class="px-6 py-2 rounded-full bg-[var(--verde-oliva)] text-white hover:bg-[var(--roxo-terroso)] font-herkings text-base shadow transition">
+                Ler artigo completo
+              </button>
+            </a>
           </div>
         </article>
 
         <!-- Article 2 -->
-        <article class="bg-white rounded-2xl p-8 shadow-lg">
-          <h2 class="font-herkings text-2xl text-[var(--roxo-terroso)] mb-3">Ansiedade Feminina: Compreendendo suas Particularidades</h2>
-          <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">Em breve</div>
+        <article class="bg-white rounded-2xl p-8 shadow-sm border border-[var(--rosa-claro)]/40">
+          <h2 class="font-herkings text-2xl text-[var(--cinza-escuro)] mb-3">Sintomas ocultos do TDAH em Mulheres Adultas</h2>
+          <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">Temática: Neurodivergência</div>
           <div class="prose font-trajan text-[var(--cinza-escuro)]">
-            <p class="mb-4">
-              A ansiedade afeta mulheres de maneiras únicas. Neste artigo, exploraremos as características específicas da ansiedade feminina e estratégias eficazes de tratamento.
-            </p>
-            <p>Aguarde conteúdo exclusivo sobre este tema tão importante.</p>
+            <p class="mb-4">Como o Transtorno de Déficit de Atenção é frequentemente ignorado ou confundido com "estresse" e ansiedade na mulher adulta e executiva.</p>
           </div>
           <div class="mt-6 flex justify-end">
-            <button disabled class="px-6 py-2 rounded-full bg-[var(--roxo-terroso)]/10 text-[var(--roxo-terroso)] font-herkings text-base border border-[var(--roxo-terroso)]/20 cursor-not-allowed">
-              Em breve
-            </button>
+            <a href="#">
+              <button class="px-6 py-2 rounded-full border border-[var(--rosa-claro)] text-[var(--roxo-terroso)] hover:bg-[var(--roxo-terroso)] hover:text-white font-herkings text-base transition">
+                Ler artigo completo
+              </button>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="bg-white rounded-2xl p-8 shadow-sm border border-[var(--rosa-claro)]/40">
+          <h2 class="font-herkings text-2xl text-[var(--cinza-escuro)] mb-3">Diferença entre Baby Blues e Depressão Pós-Parto: Quando agir?</h2>
+          <div class="font-trajan text-sm text-[var(--cinza-escuro)]/70 mb-4">Temática: Pós-parto e Maternidade</div>
+          <div class="prose font-trajan text-[var(--cinza-escuro)]">
+            <p class="mb-4">Tristeza após o bebê nascer é comum, mas há um limite de dias. Compreenda a linha exata onde o perigo começa e a medicação se faz vital.</p>
+          </div>
+          <div class="mt-6 flex justify-end">
+            <a href="#">
+              <button class="px-6 py-2 rounded-full border border-[var(--rosa-claro)] text-[var(--roxo-terroso)] hover:bg-[var(--roxo-terroso)] hover:text-white font-herkings text-base transition">
+                Ler artigo completo
+              </button>
+            </a>
           </div>
         </article>
       </div>
